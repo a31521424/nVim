@@ -1,7 +1,5 @@
--- Utilities for creating configurations
 local util = require("formatter.util")
 
--- Provides the Format, FormatWrite, FormatLock, and FormatWriteLock commands
 require("formatter").setup({
 	-- Enable or disable logging
 	logging = true,
@@ -12,19 +10,12 @@ require("formatter").setup({
 		-- Formatter configurations for filetype "lua" go here
 		-- and will be executed in order
 		lua = {
-			-- "formatter.filetypes.lua" defines default configurations for the
-			-- "lua" filetype
 			require("formatter.filetypes.lua").stylua,
 
-			-- You can also define your own configuration
 			function()
-				-- Supports conditional formatting
 				if util.get_current_buffer_file_name() == "special.lua" then
 					return nil
 				end
-
-				-- Full specification of configurations is down below and in Vim help
-				-- files
 				return {
 					exe = "stylua",
 					args = {
@@ -38,8 +29,7 @@ require("formatter").setup({
 				}
 			end,
 		},
-
-		["*"] = {
+		javascript = {
 			function()
 				return {
 					exe = "prettier",
@@ -54,3 +44,10 @@ require("formatter").setup({
 		},
 	},
 })
+
+vim.cmd([[
+ augroup FormatAutogroup
+  autocmd!
+  autocmd BufWritePost * FormatWrite
+augroup END
+]])

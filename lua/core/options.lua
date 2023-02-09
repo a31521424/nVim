@@ -35,4 +35,4 @@ opt.termguicolors = true
 opt.signcolumn = "yes"
 
 -- 主题插件配置
-vim.cmd[[colorscheme tokyonight-moon]]
+vim.cmd[[colorscheme tokyonight-storm]]

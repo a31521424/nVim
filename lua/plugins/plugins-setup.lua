@@ -67,10 +67,16 @@ return require("packer").startup(function(use)
 
 	use({
 		"nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
-    -- module = "telescope",
+		tag = "0.1.1",
+		-- module = "telescope",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	}) -- 文件检索工具
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
