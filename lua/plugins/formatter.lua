@@ -13,9 +13,6 @@ require("formatter").setup({
 			require("formatter.filetypes.lua").stylua,
 
 			function()
-				if util.get_current_buffer_file_name() == "special.lua" then
-					return nil
-				end
 				return {
 					exe = "stylua",
 					args = {
@@ -39,6 +36,16 @@ require("formatter").setup({
 					},
 					stdin = true,
 					try_node_modules = true,
+				}
+			end,
+		},
+		rust = {
+			function()
+				return {
+					exe = "rustfmt",
+					args = {
+						util.escape_path(util.get_current_buffer_file_path()),
+					},
 				}
 			end,
 		},

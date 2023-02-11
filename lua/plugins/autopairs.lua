@@ -94,5 +94,3 @@ npairs.add_rule(Rule("[%(%{%[]", "")
 		-- do not endwise if there is no closing
 		return get_closing_for_line(opts.line) ~= ""
 	end))
-
-npairs.add_rule(Rule("<", ">"))
