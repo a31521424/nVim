@@ -9,7 +9,6 @@ map.set("i", "jk", "<ESC>")
 -- -- 多行移动
 map.set("v", "J", ":m '>+1<CR>gv=gv")
 map.set("v", "K", ":m '<-2<CR>gv=gv")
-map.set("v", "jk", "<ESC>")
 
 -- 正常模式
 -- -- 窗口分割
