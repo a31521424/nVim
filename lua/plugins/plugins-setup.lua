@@ -67,15 +67,13 @@ return require("packer").startup(function(use)
 
 	use({
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.1",
 		-- module = "telescope",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	}) -- 文件检索工具
 
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-	})
+	use("akinsho/toggleterm.nvim") -- 终端工具
+
+	use("kylechui/nvim-surround") -- 添加环绕符号
 
 	if packer_bootstrap then
 		require("packer").sync()
