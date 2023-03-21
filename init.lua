@@ -18,5 +18,6 @@ require("plugins.formatter") -- 代码格式化插件
 require("plugins.autopairs") -- 自动括号
 require("plugins.telescope") -- 全局文件搜索
 require("plugins.toggleterm") -- 多终端管理
+require("plugins.surround") -- 符号环绕插件
 
 print("加载插件管理器")
