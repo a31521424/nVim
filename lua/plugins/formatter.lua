@@ -11,7 +11,6 @@ require("formatter").setup({
 		-- and will be executed in order
 		lua = {
 			require("formatter.filetypes.lua").stylua,
-
 			function()
 				return {
 					exe = "stylua",
